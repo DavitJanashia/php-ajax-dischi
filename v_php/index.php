@@ -17,10 +17,6 @@
       height: 100vh;
       padding: 0;
     }
-    .album{
-      height: 200px;
-    }
-
 
     img.poster{
       height: 110px;
@@ -50,6 +46,7 @@
       margin: auto;
       flex-wrap: wrap;
       padding-top: 50px;
+      justify-content: center;
 
     }
 
@@ -81,7 +78,7 @@
       color: grey;
       font-size: 12px;
     }
-    
+
     </style>
   </head>
   <body>
