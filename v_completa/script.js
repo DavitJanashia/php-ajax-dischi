@@ -1,6 +1,3 @@
-$('.ciaoaa').append('Ciao, come stai?');
-console.log('wow');
-
 $.ajax({
 
   url: 'data.php',
