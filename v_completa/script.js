@@ -1,38 +1,47 @@
-$.ajax({
+$(document).ready(init);
 
-  url: 'data.php',
-  method: 'GET',
-  success: function(data) {
-    console.log(data['response']);
-    var myAlbums = data['response'];
-    console.log(myAlbums);
+function init(){
+  getAlbums();
+}
 
 
-    var target = $('#disks-box');
-    var template = $('#album-template').html();
-    var compiled = Handlebars.compile(template);
+function getAlbums(){
 
-    for (var i = 0; i < myAlbums.length; i++) {
-      let myAlbum = myAlbums[i];
-      var myPoster = myAlbum['poster'];
-      var myTitle = myAlbum['title'];
-      var myAuthor = myAlbum['author'];
-      var myGenre = myAlbum['genre'];
-      var myYear = myAlbum['year'];
+  $.ajax({
+    url: 'data.php',
+    method: 'GET',
+    success: function(data) {
+      console.log(data['response']);
+      var myAlbums = data['response'];
+      console.log(myAlbums);
 
-      var albumHTML = compiled({
-        poster: myPoster,
-        title: myTitle,
-        author: myAuthor,
-        // genre: myGenre,
-        year: myYear
-      });
 
-      target.append(albumHTML);
+      var target = $('#disks-box');
+      var template = $('#album-template').html();
+      var compiled = Handlebars.compile(template);
+
+      for (var i = 0; i < myAlbums.length; i++) {
+        let myAlbum = myAlbums[i];
+        var myPoster = myAlbum['poster'];
+        var myTitle = myAlbum['title'];
+        var myAuthor = myAlbum['author'];
+        var myGenre = myAlbum['genre'];
+        var myYear = myAlbum['year'];
+
+        var albumHTML = compiled({
+          poster: myPoster,
+          title: myTitle,
+          author: myAuthor,
+          year: myYear
+        });
+
+        target.append(albumHTML);
+      }
+    },
+    error: function(err) {
+      console.log(err);
     }
-  },
-  error: function(err) {
-    console.log(err);
-  }
 
-});
+  });
+
+}

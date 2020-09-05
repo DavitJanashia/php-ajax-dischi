@@ -55,9 +55,6 @@ main{
   flex-direction: column;
 }
 
-.album > div{
-  text-align:  center;
-}
 
 .title{
   text-transform: uppercase;
