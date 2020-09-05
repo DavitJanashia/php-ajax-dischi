@@ -36,16 +36,3 @@ $.ajax({
   }
 
 });
-
-
-
-
-// var movieHTML = compiled({
-//   li_class: i,
-//   title: movie['title'],
-//   type: '<div class="movie">Movie</div>',
-//   original_title: movie['original_title'],
-//   original_language: movie['original_language'],
-//   image: myPoster
-// });
-// target.append(movieHTML);
