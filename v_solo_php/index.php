@@ -1,8 +1,12 @@
+<?php
+require __DIR__ . '/partials/vars.php';
+ ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Spotify</title>
     <style type="text/css">
     *{
       box-sizing: border-box;
@@ -92,8 +96,6 @@
     <main>
       <div class="disks-box">
         <?php
-        require __DIR__ . '/partials/vars.php';
-
         foreach ($list as $key => $value) {
           foreach ($value as $value1) {
             ?>
