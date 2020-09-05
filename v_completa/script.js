@@ -11,10 +11,7 @@ function getAlbums(){
     url: 'data.php',
     method: 'GET',
     success: function(data) {
-      console.log(data['response']);
       var myAlbums = data['response'];
-      console.log(myAlbums);
-
 
       var target = $('#disks-box');
       var template = $('#album-template').html();
