@@ -47,7 +47,6 @@
       flex-wrap: wrap;
       padding-top: 50px;
       justify-content: center;
-
     }
 
     .album{
